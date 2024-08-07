@@ -1,0 +1,46 @@
+.materia {
+    margin: 20px;
+    padding: 20px;
+    flex-wrap: nowrap;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #3D8BF2;
+  }
+  
+  .materia-nivel {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .materia-contenido {
+    width: 250px;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .materia-course {
+    width: 250px;
+    height: 150px;
+    background-color: #eee;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .materia-course img {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 5px;
+  }
+  
+  .materia-course h3 {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  

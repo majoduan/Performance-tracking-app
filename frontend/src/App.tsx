@@ -15,19 +15,28 @@ import SeguimientoSilabo from './components/SeguimientoSilabo';
 import RegistroAvance from './components/RegistroAvance';
 import RegistroAsistencia from './components/RegistroAsistencia';
 import Asistencia from './pages/Asistencia';
+import ProgramacionAsignaturas from './pages/ProgramacionAsignaturas'
 
 
 
 function App() {
   const { paginaActual, rol, profesor } = useContextoGlobal()
   const [isSemesterClosed, setIsSemesterClosed] = useState<boolean>(false);
+  const [isComponentEnabled, setIsComponentEnabled] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState('SeguimientoSilabo');
+
   const handleSemesterToggle = (isClosed: boolean) => {
     console.log('Semestre cerrado:', isClosed);
     setIsSemesterClosed(isClosed);
+    setIsComponentEnabled(isClosed);
   };
   const handlePageChange = (page: string) => {
     setCurrentPage(page);
+  };
+
+  const handleCloseSemester = () => {
+    setIsComponentEnabled(true);
+    
   };
 
   const renderAsignaturaChildren = (): React.ReactNode[] => {
@@ -63,9 +72,9 @@ function App() {
         default:
           return (
             <>
-              <Asignatura cerrarSemestre={() => console.log('Cerrando semestre')}>
+              <Asignatura cerrarSemestre={handleCloseSemester}>
                 <Componente_profesor id="Profesores" />
-                <Componente_asignatura id="Asignaturas" />
+                {isComponentEnabled ? <ProgramacionAsignaturas id="ListadoAsignaturas" /> : <div>El componente está bloqueado</div>}
               </Asignatura>
             </>
           );

@@ -1,0 +1,38 @@
+.listado-asignaturas {
+    font-family: 'Montserrat', sans-serif;
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: row;
+
+
+}
+.container-asignaturas {
+    max-width: 340px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-basis: calc(25% - 15px); /* 25% para 4 elementos por fila, ajusta el 15px según el gap */
+    max-width: calc(25% - 15px);
+    flex-wrap: initial;
+    box-sizing: border-box;
+
+}
+
+@media (max-width: 900px) {
+    .container-asignaturas {
+      flex-basis: calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+  }
+
+
+
+
+.cursos-title {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: black;
+    
+}
