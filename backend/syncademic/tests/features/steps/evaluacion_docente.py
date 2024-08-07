@@ -36,6 +36,7 @@ def step_impl(context):
         print(f"Docente: {docente.nombre}, Promedio: {promedio:.2f}")
 
 
+# Escenario 2
 @step('que existe uno o ningún docente que ha impartido la asignatura "{nombre_asignatura}"')
 def step_impl(context, nombre_asignatura):
     context.docente3 = Docente(fake.name())

@@ -5,6 +5,13 @@ from collections import defaultdict
 
 
 def calcular_promedios(evaluaciones) -> List[Tuple[str, float]]:
+    """ Calcula el promedio de las evaluaciones de un docente
+        Parameters:
+            evaluaciones: <List> Evaluacion
+        Return:
+            promedio de evaluaciones del docente
+    """
+
     resultados = defaultdict(list)
     for evaluacion in evaluaciones:
         resultados[evaluacion.docente].append(evaluacion.calificacion)
@@ -19,23 +26,38 @@ def calcular_promedios(evaluaciones) -> List[Tuple[str, float]]:
 
 
 class Asignatura:
+    """ Asignatura
+         Clase auxiliar para recopilar la informacion necesaria de
+         la asignatura
+     """
     def __init__(self, nombre: str):
         self.nombre = nombre
 
 
 class TipoEvaluacion(Enum):
+    """ TipoEvaluacion
+             Clase auxiliar para recopilar los tipos de evaluacion
+    """
     Heteroevaluacion = 1
     Autoevaluacion = 2
     Coevaluacion = 3
     Total = 4
 
 class Docente:
+    """ Docente
+             Clase auxiliar para recopilar la informacion necesaria del
+             docente
+     """
     def __init__(self, nombre: str):
         self.nombre = nombre
         self.evaluaciones: List[Evaluacion] = []
 
 
 class Evaluacion:
+    """ Evaluacion
+             Clase auxiliar para recopilar la informacion del historial
+             de evaluaciones de un docente y de las asignaturas
+    """
     evaluaciones = []
 
     def __init__(self, nombre: str, tipo_evaluacion: TipoEvaluacion, calificacion: float,

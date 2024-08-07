@@ -9,8 +9,18 @@ from rest_framework.response import Response
 # from ..services.evaluacion_docente_service import docentes_por_promedio, sugerencias_docentes
 from ..services.evaluacion_docente_service import evaluacion_docente_service
 
+# Views para evaluación docente
+# Utilizado por Feature 7
+# Creado por Xavier Carpio
+
 
 class EvaluacionViewSet(viewsets.ModelViewSet):
+    """
+    EvaluacionViewSet
+    Clase que permite crear las vistas para todo lo relacionado a
+    evaluaciones docente
+
+    """
     queryset = Evaluacion.objects.all()
     serializer_class = EvaluacionSerializer
 
