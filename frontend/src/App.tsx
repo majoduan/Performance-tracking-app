@@ -63,13 +63,11 @@ function App() {
 
   const mostrarPagina = () => {
 
-    if (rol == 'Admin') {
+    if (rol === 'administrador') {
       switch (paginaActual) {
         case 'Profesor':
           return profesor ? <PerfilProfesor profesor={profesor} /> : <div>No se ha seleccionado ningún profesor</div>;
-        case 'Login':
-          return <Login />
-        default:
+        case 'Home':
           return (
             <>
               <Asignatura cerrarSemestre={handleCloseSemester}>
@@ -79,22 +77,22 @@ function App() {
             </>
           );
       }
-    } else {
+    } else if (rol === 'docente') {
 
       switch (paginaActual) {
         case 'Cursos':
           return <Cursos />
         case 'Capacitaciones':
           return <Capacitaciones />
-        case 'Login':
-          return <Login />
-        default:
+        case 'Home':
           return (
             <Asignatura cerrarSemestre={handleSemesterToggle}>
               {renderAsignaturaChildren()}
             </Asignatura>
           );
       }
+    } else {
+      return <Login />
     }
   }
 
@@ -106,14 +104,7 @@ function App() {
 }
 
 function Componente_profesor({ id }: { id: string }) {
-  const { setPaginaActual, setProfesor } = useContextoGlobal();
-
-  const handleRowClick = (profesor: TipoProfesor) => {
-    setProfesor(profesor);
-    setPaginaActual('Profesor');
-  };
-
-  return <TablaProfesores alHacerClicEnFila={handleRowClick} />;
+  return <TablaProfesores/>;
 }
 
 function Componente_asignatura({ id }: { id: string }) {
