@@ -25,10 +25,19 @@ const ListadoAsignaturas: React.FC = () => {
   }, []);
 
 
+    // Obtener el nombre de la primera asignatura para mostrar cuando paginaActual es "DocentesAfines"
+    const asignaturaDocenteAfines = paginaActual === "DocentesAfines" && asignaturas.length > 0 
+    ? asignaturas[0].nombre 
+    : '';
+
   return (
     <div className="listado-asignaturas">
       <h1 className='cursos-title'>
-        <strong>Asignaturas</strong>
+        <strong>
+          {paginaActual === "DocentesAfines" && asignaturaDocenteAfines 
+            ? `Asignatura: ${asignaturaDocenteAfines}` 
+            : 'Asignaturas'}
+        </strong>
       </h1>
       <div className='container-asignaturas'>
         {!(paginaActual=="DocentesAfines")&&asignaturas.map((asignatura) => (

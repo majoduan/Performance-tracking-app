@@ -1,0 +1,71 @@
+.tabla-container {
+    width: 100%;
+    overflow-y: auto;
+}
+
+.tabla-container th{
+    min-width: 200px;
+    
+}
+
+.celda-tabla {
+    min-height: 200px;
+    text-align: center !important;
+}
+
+.docente-riesgo {
+    background-color: #565e64 !important;
+    color: #fff !important;
+}
+
+.docente-media {
+    background-color: #FFCA2C !important;
+}
+
+.docente-alta {
+    background-color: #BB2D3B !important;
+    color: #fff !important;
+}
+
+.contenedor-notificacion {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.badge.bg-warning {
+    color: #000 !important;
+}
+
+/* Estilos para el botón y el dropdown */
+button {
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.dropdown-toggle {
+    margin-bottom: 1rem;
+}
+
+/* Estilos específicos para la tabla */
+.table-hover tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Estilos para el modal */
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body h3 {
+    margin-top: 1rem;
+}
+
+.modal-body p {
+    margin-left: 1rem;
+}
+
+.btn-acceder-materia .btn-success {
+    width: 100%;
+}
+

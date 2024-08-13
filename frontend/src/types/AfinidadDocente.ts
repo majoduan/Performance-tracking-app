@@ -3,9 +3,11 @@ export type Docente = {
     nombre: string;
     correo: string;
     promedio: number;
-    atributos?: Array<string>;
-    numPeriodosAcademicos: number;
-    notas: Array<number>;
+
+    tipo_evaluacion: number;
+    calificacion: number;
+    periodo: string;
+
 }
 
 export type Asignatura = {

@@ -1,10 +1,9 @@
 import { Docente } from "../types/AfinidadDocente";
 
-export const obtenerDocentes = async (
-  asignatura: number,
-  tipoEvaluacion: number
+export const obtenerHistorialDocentes = async (
+  id_docente: number
 ): Promise<Docente[]> => {
-  const url = `https://syncademic-0-1.onrender.com/syncademic/evaluacion-docente/docentes-por-promedio/${tipoEvaluacion}/${asignatura}/`;
+  const url = `https://syncademic-0-1.onrender.com/syncademic/evaluacion-docente/evaluaciones-docente/${id_docente}/`;
 
   return fetch(url, {
     method: "GET",
@@ -20,10 +19,9 @@ export const obtenerDocentes = async (
     })
     .then((data) => {
       return data.map((item: any) => ({
-        id_docente: item.docente.id_docente,
-        nombre: item.docente.nombre,
-        correo: item.docente.correo,
-        promedio: item.promedio,
+        tipo_evaluacion: item.evaluacion.tipo_evaluacion,
+        calificacion: item.evaluacion.calificacion,
+        periodo: item.evaluacion.periodo,
       }));
     })
     .catch((error) => {

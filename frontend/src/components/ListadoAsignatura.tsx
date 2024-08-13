@@ -21,17 +21,12 @@ function ListadoAsignatura({course,  id_asignatura }: MateriasProps) {
   
     return (
     <div className="materia">
-      <div className="materia-contenido">
-        <div className="materia-course">
-          <img src={ImagenMateria} alt="course content" />
-          <h3>{course}</h3>
-          <div className="btn-acceder-materia d-grid">
-                    <Button variant="success" onClick={()=> cambiarPagina("DocentesAfines")}>
-                        Acceder
-                    </Button>
-                </div>
-
-        </div>
+      <img src={ImagenMateria} alt="course content" />
+      <h3>{course}</h3>
+      <div className="btn-acceder-materia d-grid">
+        <Button variant="success" onClick={()=> cambiarPagina("DocentesAfines")}>
+          Acceder
+        </Button>
       </div>
     </div>
   );
